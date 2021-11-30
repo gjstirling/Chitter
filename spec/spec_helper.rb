@@ -12,6 +12,9 @@ require 'pg'
 
 Capybara.app = Chitter
 
+# models 
+require '/Users/graemestirling/Chitter/lib/post.rb'
+
 RSpec.configure do |config|
   #clear DB before running each test
   config.before(:each) do
