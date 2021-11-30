@@ -9,6 +9,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'pg'
+require_relative './setup_test_database'
 
 Capybara.app = Chitter
 
@@ -18,7 +19,7 @@ require '/Users/graemestirling/Chitter/lib/post.rb'
 RSpec.configure do |config|
   #clear DB before running each test
   config.before(:each) do
-    
+    setup_test_database
   end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

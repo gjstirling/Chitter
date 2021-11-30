@@ -1,8 +1,14 @@
 describe '.all' do
   it 'returns all peeps' do
-    peeps = Post.all
+    connection = PG.connect(dbname: 'chitter_test')
 
-    expect(peeps).to include "peep"
-    expect(peeps).to include "I am also a peep"
+    #Add test data 
+    connection.exec("INSERT INTO posts (peep) VALUES ('peep');")
+    connection.exec("INSERT INTO posts (peep) VALUES ('I am also a peep');")
+
+    posts = Post.all
+
+    expect(posts).to include "peep"
+    expect(posts).to include "I am also a peep"
   end
 end

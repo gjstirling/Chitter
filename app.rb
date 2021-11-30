@@ -11,4 +11,9 @@ class Chitter < Sinatra::Base
     erb :index
   end 
 
+  get '/posts' do 
+    @posts = Post.all
+    erb :peeps
+  end 
+
 end 
