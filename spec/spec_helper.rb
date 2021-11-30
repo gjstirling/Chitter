@@ -9,7 +9,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'pg'
-require 'setup_test_database'
+
 Capybara.app = Chitter
 
 RSpec.configure do |config|

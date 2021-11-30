@@ -11,19 +11,4 @@ class Chitter < Sinatra::Base
     erb :index
   end 
 
-  get '/users' do 
-    erb :login
-  end 
-
-  get '/users/new' do 
-    erb :signup
-  end 
-
-  post '/users' do 
-    # create the user and then...
-    p params 
-    redirect('/users')
-  end 
-
-
 end 
