@@ -1,4 +1,4 @@
-require './spec/spec_helper.rb'
+require '/Users/graemestirling/Chitter/spec/spec_helper.rb'
 
 feature 'Landing page' do
   scenario 'Index page provides option to login or signup for Chitter' do
