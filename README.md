@@ -1,16 +1,28 @@
 # Chitter: A Twitter style Clone 
 
-Description
+## Description
 
-Domain Model  
+This is a clone of the popular CRUD application Twitter. User can create posts or see previously made posts stored on a local SQL database. 
 
-Usage/installation Instructions 
+## Domain Model  
 
-Database/migrations 
+## Usage/installation Instructions 
 
-Technologies used 
+Make sure you have ruby 2.7.3 installed
 
-Testing/linting
+Clone the project into a directory using 
+```git clone project```
+
+Install reequired gems
+```bundle install```
+
+## Database/migrations 
+
+Create database creation script 
+
+## Technologies used 
+
+## Testing/linting
 
 
 
