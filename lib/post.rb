@@ -1,3 +1,5 @@
+require 'pg'
+
 class Post
   def self.all 
     if ENV['ENVIRONMENT'] == 'test'
@@ -21,7 +23,10 @@ class Post
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO posts (peep) VALUES('#{peep}')")
+    result = connection.exec_params(
+      "INSERT INTO posts (peep) VALUES($1) RETURNING peep;", [peep]
+    )
+    Post.new(peep: result[0]['peep'])
   end
 
 
