@@ -11,6 +11,7 @@ feature 'Viewing posts' do
 
       expect(page).to have_content "peep"
       expect(page).to have_content "I am also a peep"
+      expect(page).to have_content "13/11/21 10:30"
     end 
   end
 end

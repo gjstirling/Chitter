@@ -23,9 +23,8 @@ class Chitter < Sinatra::Base
   end 
 
   post '/posts' do 
-    peep = params['peep']
-    connection = connect_to_db
-    connection.exec("INSERT INTO posts (peep) VALUES('#{peep}')")
+    p params['peep']
+    Post.create(peep: params['peep'])
     redirect '/posts'
   end 
 

@@ -6,27 +6,26 @@ class Post
     result = connect_to_db.exec('SELECT * FROM posts;')
     result.map { |post| 
       Post.new(
-        peep: post['peep']
+        peep: post['peep'], time_stamp: post['time_stamp']
       )
     }
   end 
 
   def self.create(peep:)
+    p peep
+    time_stamp = Time.new.strftime("%d/%m/%y %k:%M")
     result = connect_to_db.exec_params(
-      "INSERT INTO posts (peep) VALUES($1) RETURNING peep;", [peep]
+      "INSERT INTO posts (peep, time_stamp) VALUES($1, $2) RETURNING peep, time_stamp;", [peep, time_stamp]
     )
-    Post.new(peep: result[0]['peep'])
+    Post.new(peep: result[0]['peep'], time_stamp: time_stamp)
   end
 
-  attr_reader :peep
+  attr_reader :peep, :time_stamp
 
-  def initialize(peep:)
+  def initialize(peep:, time_stamp:)
     @peep = peep
+    @time_stamp = time_stamp
   end
 end 
 
 
-
-
-
-# Time.new.strftime("%d/%m/%y %k:%M")

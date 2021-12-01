@@ -1,23 +1,29 @@
 describe '.all' do
   it 'returns all peeps' do
-    connection = PG.connect(dbname: 'chitter_test')
+    Timecop.freeze(Time.parse('13/11/2021 10:30')) do 
+      connection = PG.connect(dbname: 'chitter_test')
 
-    #Add test data 
-    connection.exec("INSERT INTO posts (peep) VALUES ('peep');")
-    connection.exec("INSERT INTO posts (peep) VALUES ('I am also a peep');")
+      #Add test data 
+      Post.create(peep: 'peep')
+      Post.create(peep: 'I am also a peep')
+      
 
-    posts = Post.all
+      posts = Post.all
 
-    expect(posts.length).to eq 2
-    expect(posts.first).to be_a Post
-    expect(posts.first.peep).to eq 'peep'
+      expect(posts.length).to eq 2
+      expect(posts.first).to be_a Post
+      expect(posts.first.peep).to eq 'peep'
+      expect(posts.first.time_stamp).to eq '13/11/21 10:30'
+    end
   end
 end
 
 describe '.create' do
   it 'creates a new post' do
-    Post.create(peep: 'peep peep')
+    Timecop.freeze(Time.parse('13/11/2021 10:30')) do 
+      Post.create(peep: 'peep peep')
 
-    expect(Post.all.first.peep).to include 'peep peep'
+      expect(Post.all.first.peep).to include 'peep peep'
+    end
   end
 end

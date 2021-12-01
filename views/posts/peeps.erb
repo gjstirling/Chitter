@@ -1,7 +1,9 @@
 <a href="/posts/new">Create a new post</a>
 
 <ul>
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
     <li><%= post.peep %></li>
+    <li>Posted @ <%= post.time_stamp %></li>
+  <br>
   <% end %>
 </ul>
