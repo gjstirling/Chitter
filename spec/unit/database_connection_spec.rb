@@ -10,7 +10,7 @@ describe DatabaseConnection do
 
     it 'this connection is persistent' do
       # Grab the connection as a return value from the .setup method
-      p connection = DatabaseConnection.setup('chitter_test')
+      connection = DatabaseConnection.setup('chitter_test')
     
       expect(DatabaseConnection.connection).to eq connection
     end
