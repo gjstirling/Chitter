@@ -10,8 +10,6 @@ describe '.all' do
 
       posts = Post.all
 
-      expect(posts.length).to eq 2
-      expect(posts.first).to be_a Post
       expect(posts.first.peep).to eq 'peep'
       expect(posts.first.time_stamp).to eq '13/11/21 10:30'
     end
@@ -25,5 +23,9 @@ describe '.create' do
 
       expect(Post.all.first.peep).to include 'peep peep'
     end
+  end
+
+  it 'rejects empty posts' do
+    expect { Post.create(peep: '') }.to raise_error 'Peep has no content'
   end
 end

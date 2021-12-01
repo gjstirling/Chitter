@@ -12,7 +12,7 @@ class Post
   end 
 
   def self.create(peep:)
-    p peep
+    raise 'Peep has no content' if peep.strip.empty?
     time_stamp = Time.new.strftime("%d/%m/%y %k:%M")
     result = connect_to_db.exec_params(
       "INSERT INTO posts (peep, time_stamp) VALUES($1, $2) RETURNING peep, time_stamp;", [peep, time_stamp]
