@@ -1,14 +1,9 @@
 require 'pg'
+require '/Users/graemestirling/Chitter/spec/database_helpers.rb'
 
 class Post
   def self.all 
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-
-    result = connection.exec('SELECT * FROM posts;')
+    result = connect_to_db.exec('SELECT * FROM posts;')
     result.map { |post| 
       Post.new(
         peep: post['peep']
@@ -17,18 +12,11 @@ class Post
   end 
 
   def self.create(peep:)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-
-    result = connection.exec_params(
+    result = connect_to_db.exec_params(
       "INSERT INTO posts (peep) VALUES($1) RETURNING peep;", [peep]
     )
     Post.new(peep: result[0]['peep'])
   end
-
 
   attr_reader :peep
 
