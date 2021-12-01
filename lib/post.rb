@@ -1,5 +1,5 @@
 require 'pg'
-require '/Users/graemestirling/Chitter/spec/database_helpers.rb'
+require './spec/database_helpers'
 
 class Post
   def self.all 

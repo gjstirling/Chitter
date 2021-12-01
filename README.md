@@ -25,3 +25,10 @@ As a Maker
 So that I can avoid others posting messages on Chitter as me
 I want to log out of Chitter
 
+
+### Edge cases to visit later 
+
+1. When post contains punctuation this can crash the program 
+2. Empty posts are still processed 
+
+
