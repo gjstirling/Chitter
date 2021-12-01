@@ -8,7 +8,6 @@ gem "sinatra-flash"
 
 
 group :test do
-  gem "sinatra-flash"
   gem 'capybara'
   gem 'timecop'
   gem 'rspec'

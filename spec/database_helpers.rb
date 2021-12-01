@@ -6,8 +6,8 @@ end
 
 def connect_to_db
   if ENV['ENVIRONMENT'] == 'test'
-    PG.connect(dbname: 'chitter_test')
+    DatabaseConnection.setup('chitter_test')
   else
-    PG.connect(dbname: 'chitter')
+    DatabaseConnection.setup('chitter')
   end
 end 

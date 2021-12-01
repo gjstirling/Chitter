@@ -16,5 +16,17 @@ describe DatabaseConnection do
     end
   end
 
+  describe '.query' do
+    it 'executes a query via PG' do
+      connection = DatabaseConnection.setup('chitter_test')
+  
+      expect(connection).to receive(:exec_params).with("SELECT * FROM posts;", [])
+  
+      DatabaseConnection.query("SELECT * FROM posts;")
+    end
+  end
+
+
+
 
 end
