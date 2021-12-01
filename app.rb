@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require '/Users/graemestirling/Chitter/lib/post.rb'
 
 class Chitter < Sinatra::Base
 
@@ -8,12 +9,23 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do 
-    erb :index
+    erb :"posts/index"
   end 
 
   get '/posts' do 
     @posts = Post.all
-    erb :peeps
+    erb :"posts/peeps"
+  end 
+
+  get '/posts/new' do 
+    erb :"posts/new"
+  end 
+
+  post '/posts' do 
+    peep = params['peep']
+    connection = PG.connect(dbname: 'chitter_test')
+    connection.exec("INSERT INTO posts (peep) VALUES('#{peep}')")
+    redirect '/posts'
   end 
 
 end 

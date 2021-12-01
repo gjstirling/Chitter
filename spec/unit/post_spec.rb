@@ -8,7 +8,16 @@ describe '.all' do
 
     posts = Post.all
 
-    expect(posts).to include "peep"
-    expect(posts).to include "I am also a peep"
+    expect(posts.length).to eq 2
+    expect(posts.first).to be_a Post
+    expect(posts.first.peep).to eq 'peep'
+  end
+end
+
+describe '.create' do
+  it 'creates a new post' do
+    Post.create(peep: 'peep peep')
+
+    expect(Post.all.first.peep).to include 'peep peep'
   end
 end

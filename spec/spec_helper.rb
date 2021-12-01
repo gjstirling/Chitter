@@ -9,7 +9,8 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'pg'
-require_relative './setup_test_database'
+require 'timecop'
+require_relative './database_helpers'
 
 Capybara.app = Chitter
 
