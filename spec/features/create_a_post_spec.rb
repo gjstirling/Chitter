@@ -10,4 +10,11 @@ feature 'Adding a new post' do
 
     end
   end
+
+  scenario 'Blank posts are not posted' do
+    visit('/posts/new')
+    fill_in('peep', with: '   ')
+    click_button('Submit')
+    expect(Post.all).to be_empty
+  end
 end

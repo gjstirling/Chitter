@@ -1,5 +1,6 @@
-<a href="/posts/new">Create a new post</a>
+<h3> <%= flash[:notice] %> </h3>
 
+<a href="/posts/new">Create a new post</a> 
 <ul>
   <% @posts.reverse.each do |post| %>
     <li><%= post.peep %></li>
@@ -9,3 +10,5 @@
 </ul>
 
 <a href="/">home</a>
+
+

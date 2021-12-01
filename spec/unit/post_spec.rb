@@ -24,8 +24,4 @@ describe '.create' do
       expect(Post.all.first.peep).to include 'peep peep'
     end
   end
-
-  it 'rejects empty posts' do
-    expect { Post.create(peep: '') }.to raise_error 'Peep has no content'
-  end
 end
