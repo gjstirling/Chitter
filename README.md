@@ -34,11 +34,11 @@ Extracting responsibilities out of the controller and into the model of the syst
 Developing how the model works depending on the needs of the new feature <br> 
 
 ### Still to do 
-Create User authentication (login/logout) 
-Add Delete feature 
-Add update feature 
-Add username to user and show underneath post
-Add styling 
+Create User authentication (login/logout) <br>
+Add Delete feature <br>
+Add update feature <br>
+Add username to user and show underneath post<br>
+Add styling <br>
 
 
 
