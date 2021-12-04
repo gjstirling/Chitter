@@ -32,6 +32,7 @@ This is my second attempt at this challenge and this is what I learned: <br>
 How to create RESTful routes and why they are used <br>
 Extracting responsibilities out of the controller and into the model of the system. This brings a separation of concerns <br>
 Developing how the model works depending on the needs of the new feature <br> 
+Understanding of how system manages a session
 
 ### Still to do 
 Create User authentication (login/logout) <br>
