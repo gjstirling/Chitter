@@ -1,0 +1,11 @@
+<h1> Welcome to Chitter ! </h1>
+
+<% if @user %>
+  <h2>Welcome, <%= @user.username %></h2>
+<% end %>
+
+<br>
+<h2>
+  <a href="/posts">See most recent peeps here</a> <br>
+</h2>
+

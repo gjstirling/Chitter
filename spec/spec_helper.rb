@@ -15,8 +15,9 @@ require_relative './database_helpers'
 Capybara.app = Chitter
 
 # models 
-require '/Users/graemestirling/Chitter/lib/post.rb'
-require '/Users/graemestirling/Chitter/lib/database_connection.rb'
+require './lib/post.rb'
+require './lib/database_connection.rb'
+require './lib/user.rb'
 
 RSpec.configure do |config|
   #clear DB before running each test

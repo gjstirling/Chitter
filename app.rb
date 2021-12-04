@@ -4,6 +4,7 @@ require 'sinatra/flash'
 require 'uri'
 require '/Users/graemestirling/Chitter/spec/database_helpers.rb'
 require '/Users/graemestirling/Chitter/lib/post.rb'
+require '/Users/graemestirling/Chitter/lib/user.rb'
 
 class Chitter < Sinatra::Base
 
@@ -15,7 +16,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do 
-    erb :"posts/index"
+    @user = User.find(session[:user_id])
+    erb :"home"
   end 
 
   get '/posts' do 
@@ -30,6 +32,16 @@ class Chitter < Sinatra::Base
   post '/posts' do 
     flash[:notice] = "Post error" if Post.create(peep: params['peep']).nil?
     redirect '/posts'
+  end
+
+  get '/users/new' do 
+    erb :'users/sign_up'
+  end 
+
+  post '/users' do 
+    user = User.create(email: params[:email], username: params[:username], password: params[:password]) 
+    session[:user_id] = user.id
+    redirect '/'
   end 
 
 end 
