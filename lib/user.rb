@@ -1,7 +1,7 @@
 require_relative 'database_connection'
 require 'bcrypt'
 
-class User 
+class User
 
   def self.create(email:, username:, password:)
     encrypted_password = BCrypt::Password.create(password)
@@ -14,7 +14,7 @@ class User
   end
 
   def self.find(id)
-    # id contains the user instance we are looking for 
+    # id contains the user instance we are looking for
     return nil unless id
     result = DatabaseConnection.query(
       "SELECT * FROM users WHERE id = $1",

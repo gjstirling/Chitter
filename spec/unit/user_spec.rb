@@ -12,7 +12,7 @@ describe '.create' do
 
   it 'hashes the password using BCrypt' do
     expect(BCrypt::Password).to receive(:create).with('password123')
-  
+
     User.create(email: 'test@example.com', username: 'test_diva', password: 'password123')
   end
 end
@@ -26,7 +26,7 @@ describe '.find' do
     expect(result.email).to eq user.email
   end
 
-  it 'returns nil if there is no id given' do 
+  it 'returns nil if there is no id given' do
     expect(User.find(nil)).to eq nil
-  end 
+  end
 end

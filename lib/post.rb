@@ -3,15 +3,15 @@ require './spec/database_helpers'
 
 class Post
 
-  def self.all 
+  def self.all
     connect_to_db
     result = DatabaseConnection.query("SELECT * FROM posts")
-    result.map { |post| 
+    result.map { |post|
       Post.new(
         peep: post['peep'], time_stamp: post['time_stamp']
       )
     }
-  end 
+  end
 
   def self.create(peep:)
     return nil if peep.strip.empty?
@@ -30,6 +30,4 @@ class Post
     @peep = peep
     @time_stamp = time_stamp
   end
-end 
-
-
+end

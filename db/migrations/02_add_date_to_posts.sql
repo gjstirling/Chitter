@@ -1,1 +1,1 @@
-ALTER TABLE posts ADD COLUMN time_stamp VARCHAR(15); 
+ALTER TABLE posts ADD COLUMN time_stamp VARCHAR(15);

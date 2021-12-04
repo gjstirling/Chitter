@@ -15,33 +15,33 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/' do 
+  get '/' do
     @user = User.find(session[:user_id])
     erb :"home"
-  end 
+  end
 
-  get '/posts' do 
+  get '/posts' do
     @posts = Post.all
     erb :"posts/peeps"
-  end 
+  end
 
-  get '/posts/new' do 
+  get '/posts/new' do
     erb :"posts/new"
-  end 
+  end
 
-  post '/posts' do 
+  post '/posts' do
     flash[:notice] = "Post error" if Post.create(peep: params['peep']).nil?
     redirect '/posts'
   end
 
-  get '/users/new' do 
+  get '/users/new' do
     erb :'users/sign_up'
-  end 
+  end
 
-  post '/users' do 
-    user = User.create(email: params[:email], username: params[:username], password: params[:password]) 
+  post '/users' do
+    user = User.create(email: params[:email], username: params[:username], password: params[:password])
     session[:user_id] = user.id
     redirect '/'
-  end 
+  end
 
-end 
+end
