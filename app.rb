@@ -22,9 +22,14 @@ class Chitter < Sinatra::Base
   end
 
   get '/posts' do
-    @user = User.find(session[:user_id])
-    @posts = Post.all
-    erb :"posts/peeps"
+    if session[:user_id].nil?
+      flash[:notice] = "You must be signed in to view posts"
+      redirect '/'
+    else 
+      @user = User.find(session[:user_id])
+      @posts = Post.all
+      erb :"posts/peeps"
+    end 
   end
 
   get '/posts/new' do
@@ -37,7 +42,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/users/new' do
-    erb :'users/sign_up'
+    if !session[:user_id].nil?
+      flash[:notice] = "You are already signed in !"
+      redirect '/'
+    else
+      erb :'users/sign_up'
+    end 
   end
 
   post '/users' do

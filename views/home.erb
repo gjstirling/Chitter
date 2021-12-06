@@ -2,12 +2,17 @@
 
 <h3> <%= flash[:notice] %> </h3>
 
-<% if @user %>
-  <h2>Welcome, <%= @user.username %></h2>
-<% end %>
-
 <br>
 <h2>
   <a href="/users/new">Sign up to Chitter here</a> <br>
   <a href="/sessions/new">Already have an account ? Login here</a> <br>
 </h2>
+
+<br> <br> <br> <br> 
+<% if @user %>
+  <h2>Logged in as <%= @user.username %></h2>
+<% end %>
+
+<form action="/sessions/destroy" method="post">
+  <input type="submit" value="Sign out" />
+</form>
