@@ -33,9 +33,9 @@ end
 
 describe '.authenticate' do
   # happy path, email and password are correct
-  it 'returns a user given a correct username and password, if one exists' do
+  it 'returns a user given a correct email and password, if one exists' do
     user = User.create(email: 'test@example.com', username: 'test_diva', password: 'password123')
-    authenticated_user = User.authenticate('test@example.com', 'password123')
+    authenticated_user = User.authenticate(email: 'test@example.com', password: 'password123')
 
     expect(authenticated_user.id).to eq user.id
   end

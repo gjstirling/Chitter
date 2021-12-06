@@ -1,4 +1,7 @@
 <h3> <%= flash[:notice] %> </h3>
+<% if @user %>
+  <h3> Welcome <%= @user.username %> </h3>
+<% end %>
 
 <a href="/posts/new">Create a new post</a>
 <ul>

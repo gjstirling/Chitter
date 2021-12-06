@@ -22,6 +22,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/posts' do
+    @user = User.find(session[:user_id])
     @posts = Post.all
     erb :"posts/peeps"
   end
