@@ -1,5 +1,7 @@
 <h1> Welcome to Chitter ! </h1>
 
+<h3> <%= flash[:notice] %> </h3>
+
 <% if @user %>
   <h2>Welcome, <%= @user.username %></h2>
 <% end %>
