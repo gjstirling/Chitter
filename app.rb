@@ -52,8 +52,13 @@ class Chitter < Sinatra::Base
 
   post '/sessions' do
     user = User.authenticate(email: params[:email], password: params[:password])
-    session[:user_id] = user.id
-    redirect '/posts'
+    if user 
+      session[:user_id] = user.id
+      redirect '/posts'
+    else
+      flash[:notice] = 'Please check your email or password.'
+      redirect '/sessions/new'
+    end 
   end
 
 end
