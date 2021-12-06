@@ -35,8 +35,7 @@ Developing how the model works depending on the needs of the new feature <br>
 Understanding of how system manages a session
 
 ### Still to do
-Create User authentication (login/logout) <br>
 Add Delete feature <br>
 Add update feature <br>
-Add username to user and show underneath post<br>
+show username underneath posts<br>
 Add styling <br>
