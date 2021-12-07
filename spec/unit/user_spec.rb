@@ -2,7 +2,7 @@
 
 describe '.create' do
   it 'creates a new user' do
-    User.create(
+    user = User.create(
       email: 'test@example.com', username: 'test_user', password: 'password123'
     )
     persisted_data = persisted_data(table: :users, id: user.id)
@@ -23,7 +23,7 @@ end
 
 describe '.find' do
   it 'finds a user by ID' do
-    User.create(
+    user = User.create(
       email: 'test@example.com', username: 'test_user', password: 'password123'
     )
     result = User.find(user.id)
@@ -39,7 +39,7 @@ end
 
 describe '.authenticate' do
   it 'returns a user given a correct email and password, if one exists' do
-    User.create(
+    user = User.create(
       email: 'test@example.com', username: 'test_user', password: 'password123'
     )
     authenticated_user = User.authenticate(
