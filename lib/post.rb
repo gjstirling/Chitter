@@ -2,7 +2,7 @@
 
 require_relative 'database_connection'
 require './spec/database_helpers'
-
+# Posts
 class Post
   def self.all
     connect_to_db

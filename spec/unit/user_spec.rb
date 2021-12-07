@@ -1,55 +1,71 @@
 # frozen_string_literal: true
 
-describe User do
-  let(:user) { User.create(email: 'test@example.com', username: 'test_user', password: 'password123') }
+describe '.create' do
+  it 'creates a new user' do
+    User.create(
+      email: 'test@example.com', username: 'test_user', password: 'password123'
+    )
+    persisted_data = persisted_data(table: :users, id: user.id)
 
-  describe '.create' do
-    it 'creates a new user' do
-      persisted_data = persisted_data(table: :users, id: user.id)
-
-      expect(user).to be_a User
-      expect(user.id).to eq persisted_data.first['id']
-      expect(user.email).to eq 'test@example.com'
-    end
-
-    it 'hashes the password using BCrypt' do
-      expect(BCrypt::Password).to receive(:create).with('password123')
-
-      user
-    end
+    expect(user).to be_a User
+    expect(user.id).to eq persisted_data.first['id']
+    expect(user.email).to eq 'test@example.com'
   end
 
-  describe '.find' do
-    it 'finds a user by ID' do
-      result = User.find(user.id)
+  it 'hashes the password using BCrypt' do
+    expect(BCrypt::Password).to receive(:create).with('password123')
 
-      expect(result.id).to eq user.id
-      expect(result.email).to eq user.email
-    end
+    User.create(
+      email: 'test@example.com', username: 'test_user', password: 'password123'
+    )
+  end
+end
 
-    it 'returns nil if there is no id given' do
-      expect(User.find(nil)).to eq nil
-    end
+describe '.find' do
+  it 'finds a user by ID' do
+    User.create(
+      email: 'test@example.com', username: 'test_user', password: 'password123'
+    )
+    result = User.find(user.id)
+
+    expect(result.id).to eq user.id
+    expect(result.email).to eq user.email
   end
 
-  describe '.authenticate' do
-    it 'returns a user given a correct email and password, if one exists' do
-      user
-      authenticated_user = User.authenticate(email: 'test@example.com', password: 'password123')
+  it 'returns nil if there is no id given' do
+    expect(User.find(nil)).to eq nil
+  end
+end
 
-      expect(authenticated_user.id).to eq user.id
-    end
+describe '.authenticate' do
+  it 'returns a user given a correct email and password, if one exists' do
+    User.create(
+      email: 'test@example.com', username: 'test_user', password: 'password123'
+    )
+    authenticated_user = User.authenticate(
+      email: 'test@example.com', password: 'password123'
+    )
 
-    it 'returns nil given an incorrect email address' do
-      user
+    expect(authenticated_user.id).to eq user.id
+  end
 
-      expect(User.authenticate(email: 'nottherightemail@me.com', password: 'password123')).to be_nil
-    end
+  it 'returns nil given an incorrect email address' do
+    User.create(
+      email: 'test@example.com', username: 'test_user', password: 'password123'
+    )
 
-    it 'returns nil given an incorrect password' do
-      user
+    expect(User.authenticate(
+             email: 'nottherightemail@me.com', password: 'password123'
+           )).to be_nil
+  end
 
-      expect(User.authenticate(email: 'test@example.com', password: 'wrongpassword')).to be_nil
-    end
+  it 'returns nil given an incorrect password' do
+    User.create(
+      email: 'test@example.com', username: 'test_user', password: 'password123'
+    )
+
+    expect(User.authenticate(
+             email: 'test@example.com', password: 'wrongpassword'
+           )).to be_nil
   end
 end

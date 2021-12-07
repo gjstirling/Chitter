@@ -2,7 +2,9 @@
 
 def sign_in
   # Create a test user
-  User.create(email: 'test@example.com', username: 'test_diva', password: 'password123')
+  User.create(
+    email: 'test@example.com', username: 'test_user', password: 'password123'
+  )
   # Then sign in as them
   visit '/sessions/new'
   fill_in(:email, with: 'test@example.com')

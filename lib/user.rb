@@ -2,7 +2,7 @@
 
 require_relative 'database_connection'
 require 'bcrypt'
-
+# Manages sessions
 class User
   def self.create(email:, username:, password:)
     encrypted_password = BCrypt::Password.create(password)
@@ -15,7 +15,6 @@ class User
   end
 
   def self.find(id)
-    # id contains the user instance we are looking for
     return nil unless id
 
     result = DatabaseConnection.query(
