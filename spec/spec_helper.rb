@@ -1,12 +1,12 @@
 # frozen_string_literal: true
+
 require 'simplecov'
 require 'simplecov-console'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
+SimpleCov.formatter =
+  SimpleCov::Formatter::MultiFormatter.new([
+                                             SimpleCov::Formatter::Console
+                                           ])
 SimpleCov.start
 
 # Set the environment to "test"
@@ -33,7 +33,7 @@ require './lib/user.rb'
 RSpec.configure do |config|
   # clear DB before running each test
   config.before(:each) do
-    setup_test_database
+    connect_to_db.exec('TRUNCATE posts, users RESTART IDENTITY;')
   end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

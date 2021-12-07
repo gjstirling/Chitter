@@ -11,6 +11,8 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  connect_to_db
+
   get '/' do
     @user = User.find(session[:user_id])
     erb :home
