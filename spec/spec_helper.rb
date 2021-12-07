@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Set the environment to "test"
 ENV['ENVIRONMENT'] = 'test'
 
@@ -11,6 +13,7 @@ require 'rspec'
 require 'pg'
 require 'timecop'
 require_relative './database_helpers'
+require_relative './test_helpers'
 
 Capybara.app = Chitter
 
@@ -20,7 +23,7 @@ require './lib/database_connection.rb'
 require './lib/user.rb'
 
 RSpec.configure do |config|
-  #clear DB before running each test
+  # clear DB before running each test
   config.before(:each) do
     setup_test_database
   end
@@ -53,5 +56,4 @@ RSpec.configure do |config|
   # inherited by the metadata hash of host groups and examples, rather than
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
 end

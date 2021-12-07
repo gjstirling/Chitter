@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
 require 'uri'
 require './database_connection_setup'
-require '/Users/graemestirling/Chitter/spec/database_helpers.rb'
-require '/Users/graemestirling/Chitter/lib/post.rb'
-require '/Users/graemestirling/Chitter/lib/user.rb'
-
+require './spec/database_helpers.rb'
+require './lib/post.rb'
+require './lib/user.rb'
+# Controller
 class Chitter < Sinatra::Base
-
   enable :sessions, :method_override
   register Sinatra::Flash
 
@@ -18,18 +19,18 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @user = User.find(session[:user_id])
-    erb :"home"
+    erb :home
   end
 
   get '/posts' do
     if session[:user_id].nil?
-      flash[:notice] = "You must be signed in to view posts"
+      flash[:notice] = 'You must be signed in to view posts'
       redirect '/'
-    else 
+    else
       @user = User.find(session[:user_id])
       @posts = Post.all
       erb :"posts/peeps"
-    end 
+    end
   end
 
   get '/posts/new' do
@@ -37,17 +38,17 @@ class Chitter < Sinatra::Base
   end
 
   post '/posts' do
-    flash[:notice] = "Post error" if Post.create(peep: params['peep']).nil?
+    flash[:notice] = 'Post error' if Post.create(peep: params['peep']).nil?
     redirect '/posts'
   end
 
   get '/users/new' do
     if !session[:user_id].nil?
-      flash[:notice] = "You are already signed in !"
+      flash[:notice] = 'You are already signed in !'
       redirect '/'
     else
       erb :'users/sign_up'
-    end 
+    end
   end
 
   post '/users' do
@@ -62,13 +63,13 @@ class Chitter < Sinatra::Base
 
   post '/sessions' do
     user = User.authenticate(email: params[:email], password: params[:password])
-    if user 
+    if user
       session[:user_id] = user.id
       redirect '/posts'
     else
       flash[:notice] = 'Please check your email or password.'
       redirect '/sessions/new'
-    end 
+    end
   end
 
   post '/sessions/destroy' do
@@ -76,5 +77,4 @@ class Chitter < Sinatra::Base
     flash[:notice] = 'You have signed out.'
     redirect('/')
   end
-
 end

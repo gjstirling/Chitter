@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'registration' do
   scenario 'a user can sign up' do
     visit '/users/new'
@@ -6,6 +8,6 @@ feature 'registration' do
     fill_in('password', with: 'password123')
     click_button('Submit')
 
-    expect(page).to have_content "test_diva"
+    expect(page).to have_content 'test_diva'
   end
 end

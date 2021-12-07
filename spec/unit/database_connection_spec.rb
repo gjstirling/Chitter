@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'database_connection'
 
 describe DatabaseConnection do
@@ -20,13 +22,9 @@ describe DatabaseConnection do
     it 'executes a query via PG' do
       connection = DatabaseConnection.setup('chitter_test')
 
-      expect(connection).to receive(:exec_params).with("SELECT * FROM posts;", [])
+      expect(connection).to receive(:exec_params).with('SELECT * FROM posts;', [])
 
-      DatabaseConnection.query("SELECT * FROM posts;")
+      DatabaseConnection.query('SELECT * FROM posts;')
     end
   end
-
-
-
-
 end

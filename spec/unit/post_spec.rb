@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 describe '.all' do
   it 'returns all peeps' do
     Timecop.freeze(Time.parse('13/11/2021 10:30')) do
       connection = PG.connect(dbname: 'chitter_test')
 
-      #Add test data
+      # Add test data
       Post.create(peep: 'peep')
       Post.create(peep: 'I am also a peep')
-
 
       posts = Post.all
 

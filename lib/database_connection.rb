@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pg'
 
 class DatabaseConnection
@@ -5,12 +7,11 @@ class DatabaseConnection
     @connection = PG.connect(dbname: dbname)
   end
 
-  def self.connection
-    @connection
+  class << self
+    attr_reader :connection
   end
 
   def self.query(sql, params = [])
     @connection.exec_params(sql, params)
   end
-
 end
