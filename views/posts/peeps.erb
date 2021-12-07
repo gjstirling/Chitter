@@ -1,9 +1,9 @@
 <h3> <%= flash[:notice] %> </h3>
 <% if @user %>
   <h3> Welcome <%= @user.username %> </h3>
+  <a href="/posts/new">Create a new post</a>
 <% end %>
 
-<a href="/posts/new">Create a new post</a>
 <ul>
   <% @posts.reverse.each do |post| %>
     <li><%= post.peep %></li>
@@ -12,7 +12,11 @@
   <% end %>
 </ul>
 
+<h2>
 <a href="/">home</a>
-<form action="/sessions/destroy" method="post">
-  <input type="submit" value="Sign out" />
-</form>
+<% if @user %>
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Sign out" />
+  </form>
+<% end %>
+</h2>

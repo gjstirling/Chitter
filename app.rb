@@ -17,14 +17,9 @@ class Chitter < Sinatra::Base
   end
 
   get '/posts' do
-    if session[:user_id].nil?
-      flash[:notice] = 'You must be signed in to view posts'
-      redirect '/'
-    else
-      @user = User.find(session[:user_id])
-      @posts = Post.all
-      erb :"posts/peeps"
-    end
+    @user = User.find(session[:user_id])
+    @posts = Post.all
+    erb :"posts/peeps"
   end
 
   get '/posts/new' do
