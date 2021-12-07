@@ -8,7 +8,7 @@ This is a clone of the popular CRUD application Twitter. User can sign up, login
 
 <img alt="domain" src="public/images/domain_model.png" width="700">
 
-## Usage/installation Instructions
+## Installation Instructions
 
 Install ruby 2.7.3 <br>
 ```brew install ruby 2.7.3```
@@ -18,6 +18,16 @@ Clone the project into a directory using <br>
 
 Install required gems <br>
 ```bundle install```
+
+## Usage Instructions
+
+- Start server using ```rackup -p 3000```
+- Visit http://localhost:3000/ in your browser
+- Click 'sign_up' 
+- Enter your details into the form 
+- You can now login by clicking 'Login'
+- Posts can be viewed or added 
+- At the end of the session click 'sigb_out' to end the session
 
 ## Set up the database
 **Create Databases**
