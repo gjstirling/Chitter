@@ -20,16 +20,17 @@ Install reequired gems
 
 ## Set up the database
 **Create Databases**
-Install and set up psql if required (Homebrew: brew install postgresql).
-Connect to psql via the Terminal
-Create the databases using the psql commands found inside db/database_installation.sql
+- Install and set up psql if required (Homebrew: brew install postgresql).
+- Connect to psql via the Terminal
+- Create the databases using the psql commands found inside db/database_installation.sql <br>
+
 **Import tables**
-Connect to the development database using the pqsl command 
+- Connect to the development database using the pqsl command 
 ```\c chitter;```
-Sequentially run the queries saved in the db/migrations directory.
-Connect to the test database using the psql command 
-```\c chitter_test```
-Run queries saved inside db/migrations directory. 
+- Sequentially run the queries saved in the db/migrations directory.
+- Connect to the test database using the psql command 
+```\c chitter_test;```
+- Run queries saved inside db/migrations directory. 
 
 ## Technologies used
 
