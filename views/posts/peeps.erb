@@ -6,8 +6,7 @@
 
 <ul>
   <% @posts.reverse.each do |post| %>
-    <li><%= post.peep %></li>
-    <li>Posted @ <%= post.time_stamp %></li>
+    <li><%= post.peep %> <br> Posted @ <%= post.time_stamp %></li>
   <br>
   <% end %>
 </ul>
