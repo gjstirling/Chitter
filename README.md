@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a clone of the popular CRUD application Twitter. User can sign up, create posts or see previously made posts stored on a local SQL database. 
+This is a clone of the popular CRUD application Twitter. User can sign up, login, create posts and see previously made posts stored on a local SQL database. User must have an account to login but does not need an account to view posted peeps.  
 
 ## Domain Model
 
@@ -10,12 +10,13 @@ This is a clone of the popular CRUD application Twitter. User can sign up, creat
 
 ## Usage/installation Instructions
 
-Make sure you have ruby 2.7.3 installed
+Install ruby 2.7.3 <br>
+```brew install ruby 2.7.3```
 
-Clone the project into a directory using
-```git clone project```
+Clone the project into a directory using <br>
+```git clone https://github.com/gjstirling/Chitter.git```
 
-Install required gems
+Install required gems <br>
 ```bundle install```
 
 ## Set up the database
@@ -25,10 +26,10 @@ Install required gems
 - Create the databases using the psql commands found inside db/database_installation.sql <br>
 
 **Import tables**
-- Connect to the development database using the pqsl command 
+- Connect to the development database using the pqsl command <br>
 ```\c chitter;```
 - Sequentially run the queries saved in the db/migrations directory.
-- Connect to the test database using the psql command 
+- Connect to the test database using the psql command <br> 
 ```\c chitter_test;```
 - Run queries saved inside db/migrations directory. 
 
