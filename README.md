@@ -6,7 +6,7 @@ This is a clone of the popular CRUD application Twitter. User can sign up, creat
 
 ## Domain Model
 
-### insert here
+<img alt="domain" src="public/images/domain_model.png" width="700">
 
 ## Usage/installation Instructions
 
