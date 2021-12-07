@@ -15,7 +15,7 @@ Make sure you have ruby 2.7.3 installed
 Clone the project into a directory using
 ```git clone project```
 
-Install reequired gems
+Install required gems
 ```bundle install```
 
 ## Set up the database
@@ -37,15 +37,15 @@ Install reequired gems
 Ruby, RSpec, Sinatra, Capybara, HTML and Postgresql
 
 ## Testing/linting
-Enter these commands into command line inside the main directory
+**Enter these commands into command line inside the main directory:**
 
-For testing 
-```rspec```  
+For testing <br>
+```rspec``` <br>
 
 For linting enter  
 ```rubocop```
 
-### Learnings from project so far
+## Learnings from project so far
 
 This is my second attempt at this challenge and this is what I learned: <br>
 How to create RESTful routes and why they are used <br>
@@ -53,7 +53,7 @@ Extracting responsibilities out of the controller and into the model of the syst
 Developing how the model works depending on the needs of the new feature <br>
 Understanding of how system manages a session by storing user id inside sessions hash <br> 
 
-### Still to do
+### Features to add
 Add Delete feature <br>
 Add update feature <br>
 show username underneath posts<br>
