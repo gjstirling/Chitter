@@ -6,7 +6,7 @@ This is a clone of the popular CRUD application Twitter. User can sign up, creat
 
 ## Domain Model
 
-### [Here](https://drive.google.com/file/d/1F5j6tjuvF94mBVeEALjkHr5AhWK1iBaF/view?usp=sharing) <br>
+### insert here
 
 ## Usage/installation Instructions
 
