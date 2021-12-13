@@ -68,4 +68,4 @@ Understanding of how system manages a session by storing user id inside sessions
 Add Delete feature <br>
 Add update feature <br>
 show username underneath posts<br>
-Add styling <br>
+Scale app for mobile use <br>
