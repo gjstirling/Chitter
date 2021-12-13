@@ -1,12 +1,13 @@
 <h3> <%= flash[:notice] %> </h3>
-<% if @user %>
-  <a href="/posts/new">Create a new post</a>
-<% end %>
-
-<ul>
-  <% @posts.reverse.each do |post| %>
-    <li><%= post.peep %> <br> Posted @ <%= post.time_stamp %></li>
-  <br>
+<div class="posts"> 
+  <% if @user %>
+    <a href="/posts/new">Create a new post</a>
   <% end %>
-</ul>
+  <ul>
+    <% @posts.reverse.each do |post| %>
+      <li><%= post.peep %> <br> Posted @ <%= post.time_stamp %></li>
+    <br>
+    <% end %>
+  </ul>
+</div>
 
