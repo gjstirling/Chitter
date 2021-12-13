@@ -10,22 +10,23 @@
       <a href="/">Home</a>
       <% if !@user %>
         <a href="/sessions/new">login</a>
-        <a href="/users/new">Sign Up</a>
-      <% else %>
-        <form action="/sessions/destroy" method="post">
-          <input type="submit" value="Sign out" />
-        </form>
+        <a href="/users/new">Sign Up</a> 
       <% end %> 
     </div>
     <div class="header"> 
       <h1> Welcome to Chitter </h1> 
     </div> 
-  <% if @user %>
-    <h2>
-      Logged in as <%= @user.username %>
-    </h2>
-  <% end %>
   <%= yield %>
   </body>
   <h3> <%= flash[:notice] %> </h3>
+  <footer>
+    <% if @user %>
+      <h3>
+        Logged in as <%= @user.username %>
+        <form action="/sessions/destroy" method="post">
+          <input type="submit" value="Sign out" />
+        </form>
+      </h3>
+    <% end %>
+  </footer>
 </html>
