@@ -5,28 +5,27 @@
     <link rel ="stylesheet" type="text/css" href="/stylesheets/application.css" />
   </head>
   <body> 
+   <div class="notice"> <%= flash[:notice] %> </div>
     <div class="navigation">
       <a href="/">Home</a> 
       <a href="/posts">Posts</a> 
       <% if !@user %>
-        <a href="/sessions/new">login</a>
+        <a href="/sessions/new">Login</a>
         <a href="/users/new">Sign Up</a> 
+      <% else %>
+        <a href="/posts/new">New Post</a>
       <% end %> 
     </div>
-    <div class="header"> 
-      <h1> Welcome to Chitter </h1> 
-    </div> 
   <%= yield %>
   </body>
-  <h3> <%= flash[:notice] %> </h3>
   <footer>
     <% if @user %>
       <h3>
-        Logged in as <%= @user.username %>
-        <form action="/sessions/destroy" method="post">
-          <input type="submit" value="Sign out" />
-        </form>
+      Logged in as - <%= @user.username %>
       </h3>
+      <form action="/sessions/destroy" method="post">
+          <input type="submit" value="Sign out" class="center"/>
+      </form>
     <% end %>
   </footer>
 </html>
