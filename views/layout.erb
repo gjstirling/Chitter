@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel ="stylesheet" type="text/css" href="/stylesheets/application.css" />
+    <title>Chitter</title>
+  </head>
+  <body> 
+    <div class="navigation">
+      <a href="/">Home</a>
+      <% if !@user %>
+        <a href="/sessions/new">login</a>
+        <a href="/users/new">Sign Up</a>
+      <% else %>
+        <form action="/sessions/destroy" method="post">
+          <input type="submit" value="Sign out" />
+        </form>
+      <% end %> 
+    </div>
+    <div class="header"> 
+      <h1> Welcome to Chitter </h1> 
+    </div> 
+  <% if @user %>
+    <h2>
+      Logged in as <%= @user.username %>
+    </h2>
+  <% end %>
+  <%= yield %>
+  </body>
+  <h3> <%= flash[:notice] %> </h3>
+</html>

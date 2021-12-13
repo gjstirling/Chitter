@@ -38,7 +38,7 @@ class Chitter < Sinatra::Base
       flash[:notice] = 'You are already signed in !'
       redirect '/'
     else
-      erb :'users/sign_up'
+      erb :'users/new'
     end
   end
 

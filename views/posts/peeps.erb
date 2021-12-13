@@ -1,6 +1,5 @@
 <h3> <%= flash[:notice] %> </h3>
 <% if @user %>
-  <h3> Welcome <%= @user.username %> </h3>
   <a href="/posts/new">Create a new post</a>
 <% end %>
 
@@ -11,11 +10,3 @@
   <% end %>
 </ul>
 
-<h2>
-<a href="/">home</a>
-<% if @user %>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign out" />
-  </form>
-<% end %>
-</h2>
