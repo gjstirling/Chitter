@@ -27,7 +27,7 @@ Install required gems <br>
 - Enter your details into the form 
 - You can now login by clicking 'Login'
 - Posts can be viewed or added 
-- At the end of the session click 'sigb_out' to end the session
+- At the end of the session click 'sign_out' to end the session
 
 ## Set up the database
 **Create Databases**
