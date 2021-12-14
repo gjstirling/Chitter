@@ -5,7 +5,6 @@
     <link rel ="stylesheet" type="text/css" href="/stylesheets/application.css" />
   </head>
   <body> 
-   <div class="notice"> <%= flash[:notice] %> </div>
     <div class="navigation">
       <a href="/">Home</a> 
       <a href="/posts">Posts</a> 
@@ -16,15 +15,16 @@
         <a href="/posts/new">New Post</a>
       <% end %> 
     </div>
+    <div class="notice"> <%= flash[:notice] %> </div>
   <%= yield %>
   </body>
   <footer>
     <% if @user %>
-      <h3>
+      <p class="notice">
       Logged in as - <%= @user.username %>
-      </h3>
-      <form action="/sessions/destroy" method="post">
-          <input type="submit" value="Sign out" class="center"/>
+      </p>
+      <form action="/sessions/destroy" method="post" class="center">
+          <input type="submit" value="Sign out" class="sign-out"/>
       </form>
     <% end %>
   </footer>
