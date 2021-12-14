@@ -6,7 +6,7 @@ feature 'registration' do
     fill_in('email', with: 'test@example.com')
     fill_in('username', with: 'test_diva')
     fill_in('password', with: 'password123')
-    click_button('Submit')
+    click_button('Create Account')
 
     expect(page).to have_content 'test_diva'
   end

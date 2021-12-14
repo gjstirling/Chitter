@@ -2,44 +2,23 @@
   background-color: rgb(143, 232, 230);
 }
 
-ul {
-  list-style-type: none;
-  margin: 5;
-  padding: 0;
-}
-
 li {
+  list-style-type: none;
   background-color: rgb(212, 235, 235);
   font-size: 150%;
   margin: auto;
   text-align: center;
-  width: 30%;
-  padding: 10px;
+  width: 50%;
+  padding: 20px;
   outline-style: solid;
 }
 
 .navigation {
   font-size: 200%;
-  margin: auto;
   text-align: center;
-  width: 100%;
-}
-
-.header {
-  font-size: 100%;
-  margin: auto;
-  text-align: center;
-  width: 20%;
-}
-
-.home {
-  font-size: 150%;
-  margin: auto;
-  outline-style: solid;
-  text-align: center;
-  width: 20%;
-  padding: 5px;
-  background-color: rgb(212, 235, 235);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .forms {
@@ -47,37 +26,56 @@ li {
   margin: auto;
   text-align: center;
   width: 25%;
-  padding: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   outline-style: solid;
   background-color: rgb(212, 235, 235);
 }
 
-h2, .notice {
+.notice {
   font-size: 200%;
   margin: auto;
   text-align: center;
-  width: 30%;
-  padding: 5px;
+  width: 50%;
+  padding: 10px;
 }
 
 .text-box {
   margin-top: 25px;
-  padding: 5px;
+  margin: auto;
+  padding: 10px;
   font-size: 75%;
+  width: 100%;
   background-color: rgb(212, 235, 235);
 }
 
 .button {
   margin-top: 25px;
   font-size: 100%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgb(212, 235, 235);
 }
 
-h3, .center {
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 75%;
 }
 
+.title {
+  font-size: 300%;
+  text-align: center;
+}
+
+.sign-out {
+  background-color: rgb(212, 235, 235);
+  width: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 

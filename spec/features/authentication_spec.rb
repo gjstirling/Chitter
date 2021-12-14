@@ -4,7 +4,7 @@ feature 'authentication' do
   scenario 'a user can sucessfully signs in' do
     sign_in
 
-    expect(page).to have_content 'Welcome test_user'
+    expect(page).to have_content 'Logged in as - test_user'
   end
 
   scenario 'a user sees an error if they get their email wrong' do
