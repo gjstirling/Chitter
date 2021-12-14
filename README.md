@@ -4,7 +4,7 @@
 
 This is a clone of the popular CRUD application Twitter. User can sign up, login, create posts and see previously made posts stored on a local SQL database. User must have an account to login but does not need an account to view posted peeps.
 
-A demonstration of this application can be found [here](https://www.loom.com/share/440eefd168ff4af490355fe783c43f07).
+A demonstration of this application can be found [here](https://www.loom.com/share/671fc533588c41eab2aa876a1123d5f6).
 
 ## Domain Model
 
