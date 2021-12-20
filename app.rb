@@ -30,7 +30,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/posts' do
-    flash[:notice] = 'A Post Cannot be blank' if Post.create(peep: params['peep']).nil?
+    flash[:notice] = 'A Post Cannot be blank' if Post.create(peep: params['peep'], user_id: session[:user_id]).nil?
     redirect '/posts'
   end
 

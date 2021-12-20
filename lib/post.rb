@@ -14,16 +14,16 @@ class Post
     end
   end
 
-  def self.create(peep:)
+  def self.create(peep:, user_id:)
     return nil if peep.strip.empty?
 
     time_stamp = Time.new.strftime('%d/%m/%y %k:%M')
 
     connect_to_db
     result = DatabaseConnection.query(
-      'INSERT INTO posts (peep, time_stamp) VALUES($1, $2) RETURNING peep, time_stamp;', [peep, time_stamp]
+      'INSERT INTO posts (peep, time_stamp, user_id) VALUES($1, $2, $3) RETURNING peep, time_stamp, user_id;', [peep, time_stamp, user_id]
     )
-    Post.new(peep: result[0]['peep'], time_stamp: time_stamp)
+    Post.new(peep: result[0]['peep'], time_stamp: time_stamp, user_id: user_id)
   end
 
   attr_reader :peep, :time_stamp, :user_id
