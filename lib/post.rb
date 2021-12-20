@@ -38,10 +38,12 @@ class Post
   private 
   
   def find_username(id)
-    # connect to database
-    # query database 
-    # export result "username"
-    #if nil return Unknown
-    "USERNAME"
+    return "Unknown" if id.nil?
+    connect_to_db
+    result = DatabaseConnection.query(
+      'SELECT username FROM users WHERE id = $1', [id]
+    )
+    result.entries[0]['username']
   end
+
 end
