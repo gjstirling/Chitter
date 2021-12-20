@@ -44,6 +44,10 @@ class Chitter < Sinatra::Base
   end
 
   post '/users' do
+    if params.any? 
+      flash[:notice] = "You must fill in all fields to sign up"
+      redirect '/users/new'
+    end 
     user = User.create(email: params[:email], username: params[:username], password: params[:password])
     session[:user_id] = user.id
     redirect '/'
