@@ -7,8 +7,8 @@ feature 'Viewing posts' do
     sign_in
     Timecop.freeze(Time.parse('13/11/2021 10:30')) do
       # Add the test data
-      Post.create(peep: 'peep')
-      Post.create(peep: 'I am also a peep')
+      Post.create(peep: 'peep', user_id: 1)
+      Post.create(peep: 'I am also a peep', user_id: 1)
 
       visit('/posts')
 
