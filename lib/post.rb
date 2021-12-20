@@ -9,7 +9,7 @@ class Post
     result = DatabaseConnection.query('SELECT * FROM posts')
     result.map do |post|
       Post.new(
-        peep: post['peep'], time_stamp: post['time_stamp']
+        peep: post['peep'], time_stamp: post['time_stamp'], user_id: post['user_id']
       )
     end
   end
@@ -26,10 +26,11 @@ class Post
     Post.new(peep: result[0]['peep'], time_stamp: time_stamp)
   end
 
-  attr_reader :peep, :time_stamp
+  attr_reader :peep, :time_stamp, :user_id
 
-  def initialize(peep:, time_stamp:)
+  def initialize(peep:, time_stamp:, user_id: "1")
     @peep = peep
     @time_stamp = time_stamp
+    @user_id = user_id
   end
 end
