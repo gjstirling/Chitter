@@ -1,6 +1,6 @@
    <ul>
       <% @posts.reverse.each do |post| %>
-        <li><%= post.peep %> <br> Posted @ <%= post.time_stamp %></li>
+        <li><%= post.peep %> <br> Posted by <%=post.username%> @ <%= post.time_stamp %></li>
       <br>
       <% end %>
   </ul> 

@@ -26,11 +26,22 @@ class Post
     Post.new(peep: result[0]['peep'], time_stamp: time_stamp, user_id: user_id)
   end
 
-  attr_reader :peep, :time_stamp, :user_id
+  attr_reader :peep, :time_stamp, :user_id, :username
 
-  def initialize(peep:, time_stamp:, user_id: "1")
+  def initialize(peep:, time_stamp:, user_id:, username: find_username(user_id))
     @peep = peep
     @time_stamp = time_stamp
     @user_id = user_id
+    @username = username
+  end
+
+  private 
+  
+  def find_username(id)
+    # connect to database
+    # query database 
+    # export result "username"
+    #if nil return Unknown
+    "USERNAME"
   end
 end
