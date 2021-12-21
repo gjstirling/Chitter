@@ -7,7 +7,7 @@
   <body>
     <header>
       <div class="container">
-        <img src="images/logo.png" alt="logo" class="logo"> 
+        <img src="/images/logo.png" alt="logo" class="logo">
 
         <nav>
           <ul>
@@ -29,9 +29,7 @@
   </body>
   <footer>
     <% if @user %>
-      <p class="notice">
       Logged in as - <%= @user.username %>
-      </p>
       <form action="/sessions/destroy" method="post" class="center">
           <input type="submit" value="Sign out" class="sign-out"/>
       </form>
