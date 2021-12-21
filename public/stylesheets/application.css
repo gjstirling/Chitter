@@ -1,5 +1,14 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(50, 255, 238);
+}
+
+.bg-image {
+  background-image: url(../images/background_image.png);
+  padding: 20em;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 40% 20%;
 }
 
 body {
@@ -24,6 +33,7 @@ header::after {
 }
 
 .logo {
+  background-color:rgb(52, 59, 255);
   float: left;
   width: 125px;
   height: auto;
@@ -37,9 +47,11 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-color:rgb(52, 59, 255);
 }
 
 nav li {
+  background-color:rgb(52, 59, 255);
   display: inline-block;
   margin-left: 25px;
   padding-top: 22px;
@@ -49,6 +61,7 @@ nav li {
 }
 
 nav a {
+  background-color:rgb(52, 59, 255);
   color:rgb(0, 24, 120);
   text-decoration: solid;
   text-transform: uppercase;
@@ -107,4 +120,41 @@ nav a::before {
   font-size: 90%;
 }
 
+.forms {
+  border-style: solid;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: rgb(255, 0, 247);
+  border-radius: 10px;
+}
+
+.forms ul {
+ list-style: none;
+ background-color: rgb(255, 0, 247);
+}
+
+.forms li {
+  padding-top: 15px;
+  text-align: center;
+  background-color: rgb(255, 0, 247);
+}
+
+.text-box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: large;
+  background-color: azure;
+  padding-left: 5;
+}
+
+.button {
+  border-radius: 20px;
+  font-size: 100%;
+}
+
+.notice {
+  text-align: center;
+  font-size: 200%; 
+}
  
