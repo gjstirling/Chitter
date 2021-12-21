@@ -26,12 +26,16 @@
     <div class="notice"> <%= flash[:notice] %> </div>
     <%= yield %>
   </body>
-  <footer>
-    <% if @user %>
-      Logged in as - <%= @user.username %>
-      <form action="/sessions/destroy" method="post" class="center">
-          <input type="submit" value="Sign out" class="sign-out"/>
-      </form>
-    <% end %>
-  </footer>
+  <% if @user %>
+    <div class="forms">
+      <ul>
+        <li>Logged in as - <%= @user.username %></li>
+        <form action="/sessions/destroy" method="post" class="center">
+          <li><input type="submit" value="Sign out" class="button"/></li>
+        </form>
+      </ul>
+    </div>
+  <% end %>
 </html>
+
+

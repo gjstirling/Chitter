@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: 40% 20%;
+  padding-bottom: 200;
 }
 
 body {
@@ -157,4 +158,5 @@ nav a::before {
   text-align: center;
   font-size: 200%; 
 }
+
  
