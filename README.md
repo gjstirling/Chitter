@@ -40,10 +40,7 @@ I'd like to log out
 
 <img alt="sign_out" src="public/images/screenshots/sign_out1.png" width="400" height="300"><img alt="sign_out2" src="public/images/screenshots/sign_out2.png" width="400" height="300">
 
-
-## Instructions
-
-### Installation: 
+## Installation Instructions: 
 
 Install ruby 2.7.3 <br>
 ```brew install ruby 2.7.3```
@@ -55,6 +52,7 @@ Install required gems <br>
 ```bundle install```
 
 ### Set up the database
+----
 **Create Databases**
 - Install and set up psql if required (Homebrew: brew install postgresql).
 - Connect to psql via the Terminal
@@ -68,6 +66,7 @@ Install required gems <br>
 ```\c chitter_test;```
 - Run queries saved inside db/migrations directory. 
 
+---
 ### Usage Instructions
 
 - Start server using ```rackup -p 3000```
