@@ -4,13 +4,45 @@
 
 This is a clone of the popular CRUD application Twitter. User can sign up, login, create posts and see previously made posts stored on a local SQL database. User must have an account to login but does not need an account to view posted peeps.
 
-A demonstration of this application can be found [here](https://www.loom.com/share/671fc533588c41eab2aa876a1123d5f6).
+## Planning 
 
-## Domain Model
+### Domain Model 
 
 <img alt="domain" src="public/images/domain_model.png" width="700">
 
-## Installation Instructions
+#### User Stories 
+```
+As a Maker
+So that I can see whats on peoples minds
+I want to visit a page where peeps are made
+```
+<img alt="peeps" src="public/images/peeps.png" width="700">
+
+```
+As a Maker
+So that I can post messages on Chitter as me
+I want to sign up for Chitter 
+```
+<img alt="sign_up" src="public/images/sign_up.png" width="700">
+
+```
+As a Maker
+So that I can post messages on Chitter
+I want to make a new 'peep'
+```
+<img alt="new_post" src="public/images/new_post.png" width="700">
+
+```
+As a Maker 
+So I can keep my account Secure 
+I'd like to log out 
+```
+
+<img alt="sign_out" src="public/images/sign_out.png" width="700">
+
+## Instructions
+
+### Installation: 
 
 Install ruby 2.7.3 <br>
 ```brew install ruby 2.7.3```
@@ -21,17 +53,7 @@ Clone the project into a directory using <br>
 Install required gems <br>
 ```bundle install```
 
-## Usage Instructions
-
-- Start server using ```rackup -p 3000```
-- Visit http://localhost:3000/ in your browser
-- Click 'sign_up' 
-- Enter your details into the form 
-- You can now login by clicking 'Login'
-- Posts can be viewed or added 
-- At the end of the session click 'sign_out' to end the session
-
-## Set up the database
+### Set up the database
 **Create Databases**
 - Install and set up psql if required (Homebrew: brew install postgresql).
 - Connect to psql via the Terminal
@@ -44,6 +66,16 @@ Install required gems <br>
 - Connect to the test database using the psql command <br> 
 ```\c chitter_test;```
 - Run queries saved inside db/migrations directory. 
+
+### Usage Instructions
+
+- Start server using ```rackup -p 3000```
+- Visit http://localhost:3000/ in your browser
+- Click 'sign_up' 
+- Enter your details into the form 
+- You can now login by clicking 'Login'
+- Posts can be viewed or added 
+- At the end of the session click 'sign_out' to end the session
 
 ## Technologies used
 
@@ -58,16 +90,7 @@ For testing <br>
 For linting enter  
 ```rubocop```
 
-## Learnings from project so far
-
-This is my second attempt at this challenge and this is what I learned: <br>
-How to create RESTful routes and why they are used <br>
-Extracting responsibilities out of the controller and into the model of the system. This brings a separation of concerns <br>
-Developing how the model works depending on the needs of the new feature <br>
-Understanding of how system manages a session by storing user id inside sessions hash <br> 
-
 ### Features to add
 Add Delete feature <br>
 Add update feature <br>
-show username underneath posts<br>
 Check for existing accounts email/usernames when signing up <br>
