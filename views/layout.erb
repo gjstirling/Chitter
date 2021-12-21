@@ -2,27 +2,33 @@
   <head>
     <meta charset="utf-8">
     <title>Chitter</title>
-    <link rel ="stylesheet" type="text/css" href="/stylesheets/application.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
   </head>
   <body>
-    <div class="navigation">
-      <a href="/">Home</a> 
-      <a href="/posts">Posts</a> 
-      <% if !@user %>
-        <a href="/sessions/new">Login</a>
-        <a href="/users/new">Sign Up</a> 
-      <% else %>
-        <a href="/posts/new">New Post</a>
-      <% end %> 
-    </div>
+    <header>
+      <div class="container">
+        <img src="/images/logo.png" alt="logo" class="logo">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li> 
+            <li><a href="/posts">Posts</a></li> 
+            <% if !@user %>
+              <li><a href="/sessions/new">Login</a></li> 
+              <li><a href="/users/new">Sign Up</a></li>  
+            <% else %>
+              <li><a href="/posts/new">New Post</a></li> 
+            <% end %> 
+          </ul>
+        </nav>
+
+      </div>
+    </header>
     <div class="notice"> <%= flash[:notice] %> </div>
-  <%= yield %>
+    <%= yield %>
   </body>
   <footer>
     <% if @user %>
-      <p class="notice">
       Logged in as - <%= @user.username %>
-      </p>
       <form action="/sessions/destroy" method="post" class="center">
           <input type="submit" value="Sign out" class="sign-out"/>
       </form>
