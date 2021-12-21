@@ -2,7 +2,7 @@
   background-color: rgb(143, 232, 230);
 }
 
-li {
+.peep_box {
   list-style-type: none;
   background-color: rgb(212, 235, 235);
   font-size: 150%;
