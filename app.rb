@@ -75,7 +75,9 @@ class Chitter < Sinatra::Base
   end
 
   def missing_details? 
-    params['email'].nil? || params['username'].nil? || params['password'].nil?
+    params['email'].split.empty? || 
+    params['username'].split.empty? || 
+    params['password'].split.empty?
   end
 
   def signed_in 

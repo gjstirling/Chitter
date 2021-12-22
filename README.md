@@ -42,14 +42,14 @@ I'd like to log out
 
 ## Installation Instructions: 
 
-Install ruby 2.7.3 <br>
-```brew install ruby 2.7.3```
+Install a version of ruby <br>
+```brew install ruby```
 
 Clone the project into a directory using <br>
 ```git clone https://github.com/gjstirling/Chitter.git```
 
 Install required gems <br>
-```bundle install```
+```bundle```
 
 ### Set up the database
 ----
