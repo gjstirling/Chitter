@@ -16,21 +16,21 @@ As a Maker
 So that I can see whats on peoples minds
 I want to visit a page where peeps are made
 ```
-<img alt="peeps" src="public/images/peeps.png" width="700">
+<img alt="peeps" src="public/images/screenshots/peeps.png" width="700">
 
 ```
 As a Maker
 So that I can post messages on Chitter as me
 I want to sign up for Chitter 
 ```
-<img alt="sign_up" src="public/images/sign_up.png" width="700">
+<img alt="sign_up" src="public/images/screenshots/sign_up.png" width="700">
 
 ```
 As a Maker
 So that I can post messages on Chitter
 I want to make a new 'peep'
 ```
-<img alt="new_post" src="public/images/new_post.png" width="700">
+<img alt="new_post" src="public/images/screenshots/new_post.png" width="700">
 
 ```
 As a Maker 
@@ -38,11 +38,9 @@ So I can keep my account Secure
 I'd like to log out 
 ```
 
-<img alt="sign_out" src="public/images/sign_out.png" width="700">
+<img alt="sign_out" src="public/images/screenshots/sign_out1.png" width="400" height="300"><img alt="sign_out2" src="public/images/screenshots/sign_out2.png" width="400" height="300">
 
-## Instructions
-
-### Installation: 
+## Installation Instructions: 
 
 Install ruby 2.7.3 <br>
 ```brew install ruby 2.7.3```
@@ -54,6 +52,7 @@ Install required gems <br>
 ```bundle install```
 
 ### Set up the database
+----
 **Create Databases**
 - Install and set up psql if required (Homebrew: brew install postgresql).
 - Connect to psql via the Terminal
@@ -62,11 +61,12 @@ Install required gems <br>
 **Import tables**
 - Connect to the development database using the pqsl command <br>
 ```\c chitter;```
-- Sequentially run the queries saved in the db/migrations directory.
+- Sequentially run the queries saved in the db/migrations directory.<br> 
 - Connect to the test database using the psql command <br> 
 ```\c chitter_test;```
 - Run queries saved inside db/migrations directory. 
 
+---
 ### Usage Instructions
 
 - Start server using ```rackup -p 3000```
