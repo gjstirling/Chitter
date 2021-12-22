@@ -6,7 +6,7 @@ feature 'Adding a new post' do
       sign_in
       visit('/posts/new')
       fill_in('peep', with: 'I am a new post')
-      click_button('Submit')
+      click_button('Create Post')
 
       expect(page).to have_content 'I am a new post'
       expect(page).to have_content '13/11/21 10:30'
@@ -16,7 +16,7 @@ feature 'Adding a new post' do
   scenario 'Blank posts are not posted' do
     visit('/posts/new')
     fill_in('peep', with: '   ')
-    click_button('Submit')
+    click_button('Create Post')
     expect(Post.all).to be_empty
   end
 end

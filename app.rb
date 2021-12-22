@@ -35,19 +35,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/users/new' do
-    if !session[:user_id].nil?
-      flash[:notice] = 'You are already signed in !'
-      redirect '/'
-    else
-      erb :'users/new'
-    end
+    signed_in? if !session[:user_id].nil?
+    erb :'users/new'
   end
 
   post '/users' do
-    if params.any? 
-      flash[:notice] = "You must fill in all fields to sign up"
-      redirect '/users/new'
-    end 
+    details_error if missing_details? 
     user = User.create(email: params[:email], username: params[:username], password: params[:password])
     session[:user_id] = user.id
     redirect '/'
@@ -73,4 +66,20 @@ class Chitter < Sinatra::Base
     flash[:notice] = 'You have signed out.'
     redirect('/')
   end
+
+  private
+  
+  def details_error
+    flash[:notice] = "You must fill in all fields to sign up"
+    redirect '/users/new'
+  end
+
+  def missing_details? 
+    return true if params['email'].nil? || params['username'].nil? || params['password'].nil?
+  end
+
+  def signed_in 
+    flash[:notice] = 'You are already signed in !'
+    redirect '/'
+  end 
 end
