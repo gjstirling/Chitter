@@ -61,7 +61,7 @@ Install required gems <br>
 **Import tables**
 - Connect to the development database using the pqsl command <br>
 ```\c chitter;```
-- Sequentially run the queries saved in the db/migrations directory.
+- Sequentially run the queries saved in the db/migrations directory.<br> 
 - Connect to the test database using the psql command <br> 
 ```\c chitter_test;```
 - Run queries saved inside db/migrations directory. 
