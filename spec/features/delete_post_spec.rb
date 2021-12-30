@@ -5,10 +5,9 @@ feature 'Deleting a post' do
       visit('/posts/new')
       fill_in('peep', with: 'I am a new post')
       click_button('Create Post')
-
       click_button('Delete')
-      expect(page).not_to have_content 'I am a new post'
-      expect(page).not_to have_content '13/11/21 10:30'
+
+      expect(page).to have_content 'Post deleted'
     end
   end
 end 
