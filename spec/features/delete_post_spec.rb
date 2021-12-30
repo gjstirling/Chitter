@@ -7,6 +7,7 @@ feature 'Deleting a post' do
       click_button('Create Post')
       click_button('Delete')
 
+      expect(page).to_not have_content 'I am a new post'
       expect(page).to have_content 'Post deleted'
     end
   end

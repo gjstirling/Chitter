@@ -34,6 +34,12 @@ class Chitter < Sinatra::Base
     redirect '/posts'
   end
 
+  delete '/posts/:id' do 
+    Post.delete(id: params['id'])
+    flash[:notice] = "Post deleted"
+    redirect '/posts'
+  end 
+
   get '/users/new' do
     signed_in? if !session[:user_id].nil?
     erb :'users/new'
