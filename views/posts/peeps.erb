@@ -5,7 +5,9 @@
       <p><%=post.username%> @ <%= post.time_stamp %></p>
       <% if @user %>
         <% if post.user_id == @user.id %>
-          <button>Delete</button>
+          <form action="/posts/destroy" method="post">
+            <button type="submit">Delete</button>
+          </form>
         <% end %>
       <% end %>
     <% end %>
