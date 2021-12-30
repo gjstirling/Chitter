@@ -7,9 +7,10 @@
   background-image: url(../images/background_image.png);
   padding: 20em;
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: 90%;
   background-position: 40% 20%;
-  padding-bottom: 200;
+  padding-bottom: 500;
+  padding-top: 500;
 }
 
 body {
