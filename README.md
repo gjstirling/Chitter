@@ -91,6 +91,5 @@ For linting enter
 ```rubocop```
 
 ### Features to add
-Add Delete feature <br>
 Add update feature <br>
 Check for existing accounts email/usernames when signing up <br>
