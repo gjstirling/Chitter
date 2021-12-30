@@ -3,6 +3,10 @@
     <% @posts.reverse.each do |post| %>
       <li><%= post.peep %> </li>
       <p><%=post.username%> @ <%= post.time_stamp %></p>
+      <% if post.user_id == @user.id %>
+        <button>Delete</button>
+      <% else %>
+      <% end %>
     <% end %>
   </ul> 
 </div>
