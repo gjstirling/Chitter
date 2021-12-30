@@ -9,7 +9,7 @@ class Post
     result = DatabaseConnection.query('SELECT * FROM posts')
     result.map do |post|
       Post.new(
-        peep: post['peep'], time_stamp: post['time_stamp'], user_id: post['user_id']
+        id: post['id'], peep: post['peep'], time_stamp: post['time_stamp'], user_id: post['user_id']
       )
     end
   end
@@ -26,9 +26,17 @@ class Post
     Post.new(peep: result[0]['peep'], time_stamp: time_stamp, user_id: user_id)
   end
 
-  attr_reader :peep, :time_stamp, :user_id, :username
+  def self.delete(id:)
+    connect_to_db
+    result = DatabaseConnection.query(
+      'DELETE FROM posts WHERE id = $1', [id]
+    )
+  end
 
-  def initialize(peep:, time_stamp:, user_id:, username: find_username(user_id))
+  attr_reader :id, :peep, :time_stamp, :user_id, :username
+
+  def initialize(id: nil, peep:, time_stamp:, user_id:, username: find_username(user_id))
+    @id = id 
     @peep = peep
     @time_stamp = time_stamp
     @user_id = user_id
