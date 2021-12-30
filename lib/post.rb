@@ -26,13 +26,6 @@ class Post
     Post.new(peep: result[0]['peep'], time_stamp: time_stamp, user_id: user_id)
   end
 
-  def self.delete(id:)
-    connect_to_db
-    result = DatabaseConnection.query(
-      'DELETE FROM posts WHERE id = $1', [id]
-    )
-  end 
-
   attr_reader :peep, :time_stamp, :user_id, :username
 
   def initialize(peep:, time_stamp:, user_id:, username: find_username(user_id))

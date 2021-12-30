@@ -26,14 +26,3 @@ describe '.create' do
     end
   end
 end
-
-describe '.delete' do 
-  it 'deletes a post' do
-    Timecop.freeze(Time.parse('13/11/2021 10:30')) do
-      Post.create(peep: 'peep peep', user_id: nil)
-      Post.delete(id: 1)
-
-      expect(Post.all.length).to eq 0
-    end
-  end
-end 
