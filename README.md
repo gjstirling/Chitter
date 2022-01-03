@@ -40,6 +40,15 @@ I'd like to log out
 
 <img alt="sign_out" src="public/images/screenshots/sign_out1.png" width="400" height="300"><img alt="sign_out2" src="public/images/screenshots/sign_out2.png" width="400" height="300">
 
+```
+As a Maker 
+So I can manage my posts
+I'd like to be able to delete my posts 
+```
+<img alt="delete_post" src="public/images/screenshots/delete_post.png" width="700">
+
+
+
 ## Installation Instructions: 
 
 Install a version of ruby <br>
